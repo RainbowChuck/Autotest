@@ -1,7 +1,7 @@
-first = int(input("Please enter your first number: "))
-second = int(input("Please enter your second number: "))
-result = 0
 try:
+    first = int(input("Please enter your first number: "))
+    second = int(input("Please enter your second number: "))
+    result = 0
     result = first/second
     print(result)
 except ZeroDivisionError:
