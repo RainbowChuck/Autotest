@@ -3,6 +3,7 @@ second = int(input("Please enter your second number: "))
 result = 0
 try:
     result = first/second
+    print(result)
 except ZeroDivisionError:
     print("You can't divide by zero")
 except ValueError:
