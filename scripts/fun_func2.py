@@ -36,7 +36,7 @@ def test_max_number():
 
 print(max_number(4, 6))
 print(max_number("f", 6))
-()
+
 print(list(even_numbers(10)))
 print(list(even_numbers("f")))
 
