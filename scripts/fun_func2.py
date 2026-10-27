@@ -13,6 +13,7 @@ def max_number(a, b):
     finally:
         pass
 
+
 def empty_function():
     pass
 
