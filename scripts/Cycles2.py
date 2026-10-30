@@ -5,7 +5,7 @@ def text_analysis(text):
 
     words = text_cleaner(text).split()
     unique_words = set(words)
-    longest_word = max(words,key=len)
+    longest_word = max(words, key = len)
     let_count = letters_count(text_cleaner(text))
 
     word_dict = {}
