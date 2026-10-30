@@ -7,7 +7,6 @@ def max_number(a, b):
             max_int = b
     else:
         print("[max_number] - Это не те типы, которые нам нужны...")
-        return None
     return max_int
 
 
@@ -22,7 +21,6 @@ def even_numbers(n):
                 yield i
     except TypeError:
         print("[even_numbers] Ошибка типов")
-    finally: pass
 
 
 def test_max_number():
