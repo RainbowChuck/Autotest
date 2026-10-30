@@ -1,29 +1,19 @@
-def can_vote(age, native, disc):
-    if age>17 and native == True and not disc:
-        return True
-    else: return False
+def can_vote():
+    try:
+        age = int(input("Введите возраст: "))
+        citizen = bool(input("Является ли гражданином? Если нет, оставить пустым: "))
+        disc = bool(input("Дисквалифицирован? Если нет, оставить пустым: "))
+        print(age, citizen, disc)
+        if age > 17 and citizen == True and disc == False:
+            print("[can_vote]: Может голосовать!")
+            return True
+        else:
+            print("[can_vote]: Не может голосовать!")
+            return False
 
-print(can_vote(5, True, False))
-print(can_vote(18, True, True))
-print(can_vote(18, False, True))
-print(can_vote(18, True, False))
+    except (ValueError, TypeError):
+        print("Ошибка: Возраст должен быть целым числом, а гражданство и дисквалификация True|False!")
+        return False
 
-def num_word(a):
-    if a in [1,2,3,4,5]:
-        try:
-            if a == 1:
-                return "One"
-            elif a == 2:
-                return "Two"
-            elif a == 3:
-                return "Three"
-            elif a == 4:
-                return "Four"
-            elif a == 5:
-                return "Five"
-        finally:
-            print(a)
-    else:
-        return "Not a value in 1,2,3,4,5"
-print(num_word(5))
-print(num_word(6))
+
+(can_vote())
