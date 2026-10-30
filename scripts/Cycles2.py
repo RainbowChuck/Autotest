@@ -8,11 +8,7 @@ def text_analysis(text):
     longest_word = max(words, key = len)
     let_count = letters_count(text_cleaner(text))
 
-    word_dict = {}
-    for word in unique_words:
-        word_dict[word] = words_count(words,word)
-
-    return longest_word, let_count, word_dict
+    return longest_word, let_count, words_count(unique_words, text)
 
 
 def text_cleaner(text):
@@ -34,9 +30,12 @@ def letters_count(text):
     return let_count
 
 
-def words_count(text, word):
-    return text.count(word)
+def words_count(unique_words, text):
+    word_dict = {}
+    for word in unique_words:
+        word_dict[word] = text.count(word)
+    return word_dict
+
 
 print(text_analysis("Галаграмма была очень реалистичной"))
-
 print(text_analysis("Субатомный, ? порозориий"))
