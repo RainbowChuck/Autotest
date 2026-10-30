@@ -8,8 +8,6 @@ def sum_one_to_hundred():
     return sum
 print(sum_one_to_hundred())
 
-odds = [x ** 2 for x in range(11) if x % 2 != 0]
-
 
 def strange_function():
     counter = 0
@@ -20,5 +18,7 @@ def strange_function():
         print("Только инты")
     return counter
 
+
+odds = [x ** 2 for x in range(11) if x % 2 != 0]
 print(odds)
 print(strange_function())
