@@ -1,17 +1,14 @@
 def max_number(a, b):
     max_int = None
-    try:
+    if isinstance(a, int) and isinstance(b, int):
         if a > b:
             max_int = a
         else:
             max_int = b
-    except TypeError:
-        print("[max_number] - Это не те типы, которые нам нужны...")
     else:
-        print(f"[max_number]: большее {max_int}")
-        return max_int
-    finally:
-        pass
+        print("[max_number] - Это не те типы, которые нам нужны...")
+        return None
+    return max_int
 
 
 def empty_function():
