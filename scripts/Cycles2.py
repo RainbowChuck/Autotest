@@ -1,14 +1,17 @@
 # ---------------------------Анализ текста-------------------
 
 def text_analysis(text):
-    text = text.lower()
+    if isinstance(text, str):
+        text = text.lower()
 
-    words = text_cleaner(text).split()
-    unique_words = set(words)
-    longest_word = max(words, key = len)
-    let_count = letters_count(text_cleaner(text))
+        words = text_cleaner(text).split()
+        unique_words = set(words)
+        longest_word = max(words, key = len)
+        let_count = letters_count(text_cleaner(text))
 
-    return longest_word, let_count, words_count(unique_words, text)
+        return longest_word, let_count, words_count(unique_words, text)
+    else:
+        print("для анализа необходим исключительно текст")
 
 
 def text_cleaner(text):
@@ -39,3 +42,4 @@ def words_count(unique_words, text):
 
 print(text_analysis("Галаграмма была очень реалистичной"))
 print(text_analysis("Субатомный, ? порозориий"))
+print(text_analysis(134))
