@@ -1,11 +1,10 @@
 # --------------------------Применение условий---------------
 def sum_one_to_hundred():
     sum = 0
-    for i in range(101):
-        if i % 2 == 0:
-            sum += i
+    for i in range(0,101,2):
+        sum += i
     return sum
-print(sum_one_to_hundred())
+
 
 
 def strange_function():
@@ -18,6 +17,7 @@ def strange_function():
     return counter
 
 
-odds = [x ** 2 for x in range(11) if x % 2 != 0]
+print(sum_one_to_hundred())
+odds = [x ** 2 for x in range(1,11,2)]
 print(odds)
 print(strange_function())
