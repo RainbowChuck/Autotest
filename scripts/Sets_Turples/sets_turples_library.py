@@ -48,6 +48,16 @@ def return_book(library, title):
         print("No such book")
 
 
+def find_book(library, title):
+    if title in library:
+        print(f"[find_book]: Book found: {title}"
+              f", written by {library[title]['author']}"
+              f" in {library[title]['released']},"
+              f" now is in stock: {library[title]['inStock']}")
+    else:
+        print(f"The book '{title}' is not found")
+
+
 library = {"The Silmarillion" : {"author": "John R.R. Tolkien",
                                  "released": 1977,
                                  "inStock": True}}
@@ -68,3 +78,6 @@ issue_book(library, "The Silmarillion")
 issue_book(library, "The Silmarillion")
 issue_book(library, "Name")
 return_book(library, "The Silmarillion")
+
+find_book(library, "The Silmarillion")
+find_book(library, "Name")
