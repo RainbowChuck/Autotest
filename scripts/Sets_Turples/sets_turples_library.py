@@ -29,6 +29,25 @@ def remove_book(library, title):
     print(f"[remove_book]: Удалена книга '{title}'")
 
 
+def issue_book(library, title):
+    if title in library and library[title]["inStock"] is True:
+        library[title]["inStock"] = False
+        print(f"The book {title} successfully issued")
+    elif title in library and library[title]["inStock"] is None:
+        print("This book is unavailable to burry, please try again later")
+    elif title in library and library[title]["inStock"] is False:
+        print("This book is already issued")
+    else:
+        print("No such book")
+
+
+def return_book(library, title):
+    if title in library:
+        library[title]["inStock"] = True
+    else:
+        print("No such book")
+
+
 library = {"The Silmarillion" : {"author": "John R.R. Tolkien",
                                  "released": 1977,
                                  "inStock": True}}
@@ -44,3 +63,8 @@ book_list_view(library)
 remove_book(library, "Name")
 
 book_list_view(library)
+
+issue_book(library, "The Silmarillion")
+issue_book(library, "The Silmarillion")
+issue_book(library, "Name")
+return_book(library, "The Silmarillion")
