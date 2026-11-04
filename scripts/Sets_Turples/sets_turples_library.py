@@ -1,9 +1,3 @@
-library = {"The Silmarillion" : {"author": "John R.R. Tolkien",
-                                 "released": 1977,
-                                 "inStock": True}}
-library_empty = {}
-
-
 def book_list_view(library):
     if library:
         print(f"[book_list_view]: ")
@@ -26,6 +20,11 @@ def add_book(library, title, author, year):
 
     print(f"[add_book]: Добавлена книга '{title}'")
 
+
+library = {"The Silmarillion" : {"author": "John R.R. Tolkien",
+                                 "released": 1977,
+                                 "inStock": True}}
+library_empty = {}
 
 book_list_view(library)
 book_list_view(library_empty)
