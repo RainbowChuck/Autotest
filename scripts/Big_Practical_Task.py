@@ -3,13 +3,17 @@ students = [
     {'name': "Hermione", 'grades': [95, 90, 97]},
     {'name': "Harry", 'grades': [80, 90, 78]},
     {'name': "Ron", 'grades': [60, 70, 64]},
-    {'name': "Draco", 'grades': [60, 75, 70]}
+    {'name': "Draco", 'grades': [60, 75, 70]},
+    {'name': "Poco", 'grades': []}
 ]
 
 
 def calculate_average(grades):
-    return sum(grades) / len(grades)
+    if grades:
+        return sum(grades) / len(grades)
+    return 0
 
+print(calculate_average([]))
 
 def show_students(students):
     print("[Show_students]: -------------")
