@@ -26,6 +26,7 @@ def remove_book(library, title):
         print("No such book")
         return None
     library.pop(title)
+
     print(f"[remove_book]: Удалена книга '{title}'")
 
 
@@ -52,8 +53,13 @@ def find_book(library, title):
     if title in library:
         print(f"[find_book]: Book found: {title}"
               f", written by {library[title]['author']}"
-              f" in {library[title]['released']},"
-              f" now is in stock: {library[title]['inStock']}")
+              f" in {library[title]['released']},")
+        if library[title]['inStock'] is True:
+            print("Книга доступна")
+        elif library[title]['inStock'] is False:
+            print("Книга выдана")
+        elif library[title]['inStock'] is None:
+            print("Книга в библиотеке, но её статус не определен")
     else:
         print(f"The book '{title}' is not found")
 
