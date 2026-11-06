@@ -10,7 +10,7 @@ def book_list_view(library):
 def add_book(library, title, author, year):
     if title in library:
         print(f"[add_book]: Книга с названием '{title}' Уже существует")
-        return None
+        return
 
     library[title] = {
         "author": author,
