@@ -54,14 +54,16 @@ def find_book(library, title):
         print(f"[find_book]: Book found: {title}"
               f", written by {library[title]['author']}"
               f" in {library[title]['released']},")
-        if library[title]['in_stock'] is True:
-            print("Книга доступна")
-        elif library[title]['in_stock'] is False:
-            print("Книга выдана")
-        elif library[title]['in_stock'] is None:
-            print("Книга в библиотеке, но её статус не определен")
     else:
         print(f"The book '{title}' is not found")
+        return
+
+    if library[title]['in_stock'] is True:
+        print("Книга доступна")
+    elif library[title]['in_stock'] is False:
+        print("Книга выдана")
+    elif library[title]['in_stock'] is None:
+        print("Книга в библиотеке, но её статус не определен")
 
 
 library = {"The Silmarillion" : {"author": "John R.R. Tolkien",
