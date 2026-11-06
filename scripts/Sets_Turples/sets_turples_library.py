@@ -24,7 +24,7 @@ def add_book(library, title, author, year):
 def remove_book(library, title):
     if title not in library:
         print("No such book")
-        return None
+        return
     library.pop(title)
 
     print(f"[remove_book]: Удалена книга '{title}'")
